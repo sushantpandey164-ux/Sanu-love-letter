@@ -1,0 +1,77 @@
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For Sanu ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;
+ background:radial-gradient(circle,#501326,#10070c 75%);
+ color:#fff0ed;font-family:Georgia,serif;
+ display:grid;place-items:center;padding:20px;
+ overflow-x:hidden;
+}
+.card{text-align:center;width:100%;max-width:480px}
+.kicker{color:#ff9aaa;letter-spacing:3px;font-size:12px}
+h1{font-size:42px;font-weight:normal}
+.rose{font-size:75px;animation:pulse 2s infinite}
+button{
+ background:#b51f43;color:white;border:1px solid pink;
+ border-radius:30px;padding:15px 27px;font-size:16px;
+}
+#letter{
+ display:none;background:#f7e6da;color:#301719;
+ padding:30px 25px;border-radius:5px;text-align:left;
+ line-height:1.8;animation:open 1s ease;
+}
+#letter h2{text-align:center;color:#a32340}
+.sign{text-align:right;font-style:italic}
+.heart{position:fixed;bottom:-30px;color:#ff708a;
+ animation:float 7s linear forwards;pointer-events:none}
+@keyframes pulse{50%{transform:scale(1.12)}}
+@keyframes open{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+@keyframes float{to{transform:translateY(-110vh);opacity:0}}
+</style>
+</head>
+<body>
+<div class="card" id="intro">
+ <div class="kicker">A LITTLE SURPRISE FOR YOU</div>
+ <div class="rose">🌹</div>
+ <h1>Hey Sanu ❤️</h1>
+ <p>Someone has a special message for you</p>
+ <p>Are you ready to open it? 💌</p>
+ <button onclick="openLetter()">Open my letter ❤️</button>
+</div>
+
+<div class="card" id="letter">
+ <h2>My dear Sanu ❤️</h2>
+ <p>I just wanted to remind you how much you mean to me. You make my days brighter, my heart happier and my life better.</p>
+ <p>Being with you feels like home, no matter where I am. I may not always say it, but I really love you a lot.</p>
+ <p>You are my peace, my comfort and my favourite person.</p>
+ <p>Thank you for your love, your care and for making even the smallest moments special.</p>
+ <p>I promise to always cherish you, support you and love you more and more every day.</p>
+ <p><b>I love you Sanu — today, tomorrow and always ❤️</b></p>
+ <p class="sign">With all my love,<br><b>Sushant ♡</b></p>
+</div>
+
+<script>
+function openLetter(){
+ document.getElementById('intro').style.display='none';
+ document.getElementById('letter').style.display='block';
+ for(let i=0;i<30;i++){
+  let h=document.createElement('div');
+  h.className='heart';h.innerText='♥';
+  h.style.left=Math.random()*100+'%';
+  h.style.animationDelay=Math.random()*3+'s';
+  h.style.fontSize=(15+Math.random()*25)+'px';
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),10000);
+ }
+}
+</script>
+</body>
+</html>
